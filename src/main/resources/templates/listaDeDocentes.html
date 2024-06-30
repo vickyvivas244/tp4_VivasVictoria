@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" data-th-href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}">
+    <title>Listado Docentes</title>
+    <style>
+        header,
+        footer {
+            background-color: #1870BC;
+            color: white;
+        }
+
+        .logo {
+            max-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div data-th-replace="~{fragments/header::encabezado}"></div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav>
+        <div data-th-replace="~{fragments/header::navbar}"></div>
+    </nav>
+    <div class="table-container">
+        <h1 class="text-center text-primary mb-4">Listado Docentes</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Legajo</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">Edición</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-th-each="docente : ${listadoDocente}">
+                    <td data-th-text="${docente.legajo}"></td>
+                    <td data-th-text="${docente.apellido}"></td>
+                    <td data-th-text="${docente.nombre}"></td>
+                    <td data-th-text="${docente.email}"></td>
+                    <td data-th-text="${docente.telefono}"></td>
+                    <td>
+                        <a data-th-href="@{'/modificarDocente/'+${docente.legajo}}" class="btn btn-warning">Modificar</a>
+                        <a data-th-href="@{'/borrarDocente/'+${docente.legajo}}" class="btn btn-danger">Borrar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-center mt-4">
+            <a data-th-href="@{/formularioDocentes}" class="btn btn-custom">Volver al Formulario</a>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div data-th-replace="~{fragments/footer::footer}"></div>
+    </footer>
+    <script data-th-src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
