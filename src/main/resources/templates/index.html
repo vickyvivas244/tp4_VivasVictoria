@@ -34,32 +34,14 @@
 
 <body>
         <!-- Header -->
-        <header class="d-flex flex-wrap justify-content-between align-items-center py-3 mb-4 border-bottom">
-            <div class="d-flex align-items-center">
-                <img src="/img/image.png" alt="Logo" class="logo me-2">
-            </div>
-            <span class="fs-4"><b>Facultad de Ingeniería - Universidad Nacional de Jujuy</b></span>
-            <small class="d-none d-md-block"><b><i>"Formando profesionales con excelencia"</i></b></small>
-        </header>
+		<header>
+			<div data-th-replace="~{fragments/header::encabezado}"></div>
+		</header>
+        
         <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Facultad de Ingeniería</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Acerca de</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Carreras</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Noticias</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <nav>
+			<div data-th-replace="~{fragments/header::navbar}"></div>
+		</nav>
 
         <div class="row content-wrapper">
             <!-- Main Content -->
@@ -179,32 +161,9 @@
         </div>
 
         <!-- Footer -->
-        <footer class="py-4 mt-4">
-			<div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h5>Contacto</h5>
-                    <p>
-                        Dirección: Av. Bolivia 1234, San Salvador de Jujuy<br>
-                        Teléfono: (388) 123-4567<br>
-                        Email: contacto@ingenieria.unju.edu.ar
-                    </p>
-                </div>
-                <div class="col-md-4">
-                    <h5>Redes Sociales</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white">Facebook</a></li>
-                        <li><a href="#" class="text-white">Twitter</a></li>
-                        <li><a href="#" class="text-white">Instagram</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4 text-end">
-                    <p>&copy; 2024 Facultad de Ingeniería, Universidad Nacional de Jujuy. Todos los derechos
-                        reservados.</p>
-                </div>
-            </div>
-			<div class="container">
-        </footer>
+		<footer>
+			<div classdata-th-replace="~{fragments/footer::footer}"></div>
+		</footer>
 
     <script data-th-src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}"></script>
 </body>
